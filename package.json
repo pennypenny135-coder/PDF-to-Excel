@@ -1,0 +1,47 @@
+{
+  "name": "pdf-to-excel",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "predev": "node scripts/copy-pdf-assets.mjs",
+    "prebuild": "node scripts/copy-pdf-assets.mjs",
+    "postinstall": "node scripts/copy-pdf-assets.mjs",
+    "test": "vitest run tests/unit",
+    "test:e2e": "playwright test --project=e2e",
+    "test:ocr": "vitest run tests/ocr && playwright test --project=ocr",
+    "fixtures": "node scripts/generate-test-fixtures.mjs",
+    "tessdata": "node scripts/download-tessdata.mjs"
+  },
+  "dependencies": {
+    "dotenv": "17.3.1",
+    "drizzle-orm": "0.45.2",
+    "exceljs": "^4.4.0",
+    "next": "16.4.2",
+    "pdfjs-dist": "^6.5.438",
+    "pg": "8.20.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.2.1",
+    "@playwright/test": "^1.65.1",
+    "@tailwindcss/postcss": "4.1.17",
+    "@types/node": "22.19.15",
+    "@types/pg": "8.18.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.4.2",
+    "postcss": "8.5.23",
+    "tailwindcss": "4.1.17",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "^5.1.2"
+  }
+}
